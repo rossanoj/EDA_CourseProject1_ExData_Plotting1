@@ -1,0 +1,109 @@
+---
+title: "README español"
+author: "Juan Rossano"
+date: "2026-02-15"
+output: pdf_document
+---
+
+Esta tarea utiliza datos del [Repositorio de Aprendizaje Automático de la UC Irvine](http://archive.ics.uci.edu/ml/), un popular repositorio de conjuntos de datos de aprendizaje automático. En concreto, utilizaremos el "Conjunto de datos de consumo de energía eléctrica en hogares individuales" que he puesto a su disposición en el sitio web del curso:
+
+-   **Conjunto de datos**: [Consumo de energía eléctrica](https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip) [20Mb]
+-   **Descripción**: Mediciones del consumo de energía eléctrica en un hogar con una frecuencia de muestreo de un minuto durante un periodo de casi 4 años. Se dispone de diferentes magnitudes eléctricas y algunos valores de submedición.
+
+Las siguientes descripciones de las 9 variables del conjunto de datos están tomadas de la página web de la UCI :
+
+1.  **Fecha**: Fecha en formato dd/mm/aaaa
+2.  **Hora**: hora en formato hh:mm:ss
+3.  **Potencia_activa_global**: potencia activa global media por minuto del hogar (en kilovatios)
+4.  **Potencia_reactiva_global**: potencia reactiva global media por minuto del hogar (en kilovatios)
+5.  **Tensión**: tensión media por minuto (en voltios)
+6.  **Intensidad_global**: intensidad de corriente promediada por minutos global del hogar (en amperios)
+7.  **Sub_medición_1**: submedición de energía nº 1 (en vatios-hora de energía activa). Corresponde a la cocina, que contiene principalmente un lavavajillas, un horno y un microondas (las placas de cocción no son eléctricas sino que funcionan con gas).
+8.  **Sub_medición_2**: submedición energética nº 2 (en vatios-hora de energía activa). Corresponde al lavadero, que contiene una lavadora, una secadora, un frigorífico y una luz.
+9.  **Sub_medición_3**: submedición de energía nº 3 (en vatios-hora de energía activa). Corresponde a un calentador de agua eléctrico y a un aire acondicionado.
+
+**Criterios**
+
+1.  ¿Se ha enviado una URL válida de GitHub que contenga un repositorio git?
+2.  ¿Contiene el repositorio GitHub al menos una confirmación posterior a la bifurcación original?
+3.  Examine los archivos de trazado en el repositorio GitHub. ¿Parecen los archivos de trazado tener el formato de archivo gráfico correcto?
+4.  ¿Cada trazado parece correcto?
+5.  ¿Cada conjunto de código R parece crear el trazado de referencia?
+
+**Revisión de las tareas**
+
+Tenga en cuenta que este curso trata sobre gráficos exploratorios, comprensión de los datos y desarrollo de estrategias. He aquí una buena cita de una lección de remolino sobre gráficos exploratorios: "Nos ayudan a encontrar patrones en los datos y a comprender sus propiedades. Sugieren estrategias de modelización y ayudan a depurar los análisis. NO utilizamos los gráficos exploratorios para comunicar resultados"
+
+Las rúbricas deben interpretarse siempre en ese contexto.
+
+Cuando realice su evaluación, por favor, mantenga la mente abierta y céntrese en lo positivo. El objetivo no es restar puntos por pequeñas desviaciones de los requisitos o por diferencias legítimas en los estilos de ejecución, etc. Busque formas de dar puntos cuando esté claro que el remitente ha hecho un esfuerzo de buena fe para realizar el proyecto, y cuando sea probable que lo haya conseguido. Y lo que es más importante, no pasa nada si una persona ha hecho algo de forma diferente a como usted lo hizo. No se trata de ver si alguien consiguió igualar su forma de hacer las cosas, sino de ver si alguien realizó objetivamente la tarea en cuestión.
+
+Para ello, tenga en cuenta lo siguiente:
+
+HAGA
+
+-   Revise el código fuente.
+
+-   Mantenga la mente abierta y céntrese en lo positivo.≤/li\>
+
+-   En caso de duda, peca de dar demasiados puntos, en lugar de dar muy pocos.
+
+-   Pregúntese si un gráfico podría responder a una pregunta de la persona que lo creó.
+
+-   Recuerde que no todo el mundo tiene la misma formación y conocimientos estadísticos.
+
+NO
+
+-   Deduzca sólo porque no esté de acuerdo con los métodos estadísticos de alguien.
+
+-   Deduzca sólo porque no esté de acuerdo con los métodos de trazado de alguien.
+
+-   Deduzca basándose en la estética.
+
+**Carga de los datos**
+
+Cuando cargue el conjunto de datos en R, tenga en cuenta lo siguiente:
+
+-   El conjunto de datos tiene 2.075.259 filas y 9 columnas. Primero calcule una estimación aproximada de cuánta memoria requerirá el conjunto de datos en memoria antes de leerlo en R. Asegúrese de que su ordenador tiene suficiente memoria (la mayoría de los ordenadores modernos deberían ir bien).
+
+-   Sólo utilizaremos datos de las fechas 2007-02-01 y 2007-02-02. Una alternativa es leer los datos sólo a partir de esas fechas en lugar de leer todo el conjunto de datos y hacer un subconjunto con esas fechas.
+
+-   Puede resultarle útil convertir las variables Fecha y Hora en clases Fecha/Hora en R utilizando las funciones `strptime()` y `as.Date()`.
+
+-   Tenga en cuenta que en este conjunto de datos los valores perdidos se codifican como `?`.
+
+**Hacer parcelas**
+
+Nuestro objetivo general aquí es simplemente examinar cómo varía el uso doméstico de la energía durante un periodo de 2 días en febrero de 2007. Su tarea consiste en reconstruir los siguientes gráficos, todos ellos construidos con el sistema de trazado base.
+
+Primero tendrá que bifurcar y clonar el siguiente repositorio de GitHub: <https://github.com/rdpeng/ExData_Plotting1>
+
+Para cada trazado deberá
+
+-   Construir el trazado y guardarlo en un archivo PNG con una anchura de 480 píxeles y una altura de 480 píxeles.
+
+-   Nombre cada uno de los archivos de trazado como plot1.png, plot2.png, etc.
+
+-   Cree un archivo de código R separado ( plot1.R, plot2.R, etc.) que construya el gráfico correspondiente, es decir, el código en plot1.R construye el gráfico plot1.png. Su archivo de códigodebe incluir el código para leer los datos de modo que el gráfico pueda reproducirse íntegramente. También debe incluir el código que crea el archivo PNG.
+
+-   Añada el archivo PNG y el archivo de código R a la carpeta de nivel superior de su repositorio git (no necesita subcarpetas separadas)
+
+Cuando haya terminado con la tarea, empuje su repositorio git a GitHub para que la versión GitHub de su repositorio esté actualizada. Debería haber cuatro archivos PNG y cuatro archivos de código R, un total de ocho archivos en la carpeta de nivel superior del repositorio.
+
+Las cuatro parcelas que tendrá que construir se muestran a continuación.
+
+**Gráfico 1**
+
+![Gráfico 1](figure/unnamed-chunk-2.png)
+
+**Gráfico 2**
+
+![Gráfico 2](figure/unnamed-chunk-3.png)
+
+**Gráfico 3**
+
+![Gráfico 3](figure/unnamed-chunk-4.png)
+
+**Gráfico 4**
+
+![Gráfico 4](figure/unnamed-chunk-5.png)
